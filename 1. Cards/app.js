@@ -12,3 +12,10 @@ function removeActiveClasses() {
         panel.classList.remove('active')
     });
 };
+
+panels.forEach(panel => {
+    panel.addEventListener('dblclick', () => {
+        removeActiveClasses()
+        panel.style.width = '10vw'
+    });
+});
