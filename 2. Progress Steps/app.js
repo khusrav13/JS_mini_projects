@@ -5,22 +5,20 @@ const circles = document.querySelectorAll('.circle');
 
 let currentActive = 1
 
-next.addEventListener('click', ()=> {
-
-    currentActive++
+next.addEventListener('click', () => {
+    currentActive++;
 
     if (currentActive > circles.length) {
-        currentActive = circles.length
-    };
+        currentActive = circles.length;
+    };  
 
     update();
 });
 
-prev.addEventListener('click', ()=> {
+prev.addEventListener('click', () => {
+    currentActive--;
 
-    currentActive--
-
-    if(currentActive < 1) {
+    if (currentActive < 1) {
         currentActive = 1
     }
 
@@ -28,11 +26,11 @@ prev.addEventListener('click', ()=> {
 });
 
 function update() {
-    circles.forEach((circle, idx) => {
-        if (idx < currentActive) {
-            circle.classList.add('active')
-        } else {
-            circle.classList.remove('active')
+    circles.forEach((circle, index) => {
+        if (index < currentActive) {
+            circle.classList.add('active');
+        }else {
+            circle.classList.remove('active');
         };
 
     });
@@ -49,4 +47,5 @@ function update() {
         prev.disabled = false;
         next.disabled = false;
     };
+
 };
